@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>市町村別情報サイト</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	<style>
+		.ui-header .ui-title {
+		margin-right: 15%;
+		margin-left: 15%;
+		}
+		#headerimg {
+	  width: 100%;
+		}
+		#headerimg img {
+  	width: 100%;
+		}
+	</style>
+</head>
+<body>
+<!-- メインページ -->
+	<div data-role="page">
+	<!-- メインページのヘッダ -->
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<a href="index.html" data-ajax="false" class="ui-btn-left" data-icon="arrow-l">都市圏</a>
+				<h1></h1>
+		</div>
+	<!-- メインページの内容 -->
+		<div role="content">
+		<div id="headerimg"><img src="img/headerimg.gif"></div>
+				<ul data-role="listview" data-inset="true" id="myList">
+			  <li data-role="list-divider">あ</li>
+			  <li><a href="index3.html?name=宇城市" rel="external">宇城市</a></li>
+			  <li><a href="index3.html?name=宇土市" rel="external">宇土市</a></li>
+			  <li><a href="index3.html?name=大津町" rel="external">大津町</a></li>
+			  <li data-role="list-divider">か</li>
+			  <li><a href="index3.html?name=嘉島町" rel="external">嘉島町</a></li>
+			  <li><a href="index3.html?name=菊陽町" rel="external">菊陽町</a></li>
+			  <li><a href="index3.html?name=玉東町" rel="external">玉東町</a></li>			  
+			  <li><a href="index3.html?name=熊本市" rel="external">熊本市</a></li>
+			  <li><a href="index3.html?name=甲佐町" rel="external">甲佐町</a></li>
+			  <li><a href="index3.html?name=合志市" rel="external">合志市</a></li>
+			  <li data-role="list-divider">な</li>
+			  <li><a href="index3.html?name=西原村" rel="external">西原村</a></li>
+			  <li data-role="list-divider">ま</li>
+			  <li><a href="index3.html?name=益城町" rel="external">益城町</a></li>
+			  <li><a href="index3.html?name=美里町" rel="external">美里町</a></li>
+			  <li><a href="index3.html?name=御船町" rel="external">御船町</a></li>
+			  <li data-role="list-divider">や</li>
+			  <li><a href="index3.html?name=山都町" rel="external">山都町</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

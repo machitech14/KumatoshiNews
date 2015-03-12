@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>熊本都市圏情報サイト</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.4.min.css">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery.mobile-1.4.4.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+			type: 'POST',
+			url: 'http://kumatoshi.php.xdomain.jp/kumatoshi_apps/read.php',
+			dataType: 'json',
+				success: function(json){
+				var len = json.length;
+					for(var i=0; i < len; i++){
+						if (json[i].kubun == "1"){
+							$("#list1").append('<li data-icon="false"><a href="' + json[i].link + '"><h1>' + json[i].title + '</h1><p>' + json[i].city + ' ' + json[i].updated + '</p></a></li>').listview('refresh');
+						}else if　(json[i].kubun == "2"){
+							$("#list2").append('<li data-icon="false"><a href="' + json[i].link + '"><h1>' + json[i].title + '</h1><p>' + json[i].city + ' ' + json[i].updated + '</p></a></li>').listview('refresh');
+						}else if　(json[i].kubun == "3"){
+							$("#list3").append('<li data-icon="false"><a href="' + json[i].link + '"><h1>' + json[i].title + '</h1><p>' + json[i].city + ' ' + json[i].updated + '</p></a></li>').listview('refresh');
+						}else if　(json[i].kubun == "4"){
+							$("#list4").append('<li data-icon="false"><a href="' + json[i].link + '"><h1>' + json[i].title + '</h1><p>' + json[i].city + ' ' + json[i].updated + '</p></a></li>').listview('refresh');
+						}
+					}
+				}
+			});
+		});
+	</script>
+	<style>
+		.ui-header .ui-title {
+		margin-right: 15%;
+		margin-left: 15%;
+		}
+		#headerimg {
+	  width: 100%;
+		}
+		#headerimg img {
+  	width: 100%;
+		}
+	</style>
+</head>
+<body>
+<!-- メインページ -->
+	<div data-role="page">
+<!-- メインページのヘッダ -->
+	<div data-role="header" data-theme="b" data-position="fixed">
+		<h1></h1>
+		<a href="index2.html" data-ajax="false" class="ui-btn-right" data-icon="arrow-r">市町村</a>
+	</div><!-- /header -->
+<!-- メインページの内容 -->
+	<div role="content">
+		<div id="headerimg"><img src="img/headerimg.gif"></div>
+		<div data-role="tabs" id="tabs">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#fragment-1" class="ui-btn-active">お知らせ</a></li>
+					<li><a href="#fragment-2">イベント</a></li>
+					<li><a href="#fragment-3">観光</a></li>
+					<li><a href="#fragment-4">特集</a></li>
+				</ul>
+			</div>
+			<div id="fragment-1">
+				<ul data-role="listview" id="list1"></ul>
+			</div>
+			<div id="fragment-2">
+				<ul data-role="listview" id="list2"></ul>
+			</div>
+			<div id="fragment-3">
+				<ul data-role="listview" id="list3"></ul>
+			</div>
+			<div id="fragment-4">
+				<ul data-role="listview" id="list4"></ul>
+			</div>
+		</div>
+	</div><!-- /content -->
+<!-- メインページのフッタ -->
+	<div data-role="footer">
+		<h4>&copy; 2014 Kumamoto Toshiken</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>
